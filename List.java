@@ -50,16 +50,22 @@ public class List {
     /** GIVE Textual representation of this list. */
     public String toString() {
         // Your code goes here
-
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder("(");
         Node current = first;
 
         while (current != null) {
             sb.append(current.cp.toString());
+
+            if (current.next != null) {
+                sb.append(" ");
+            }
             current = current.next;
         }
 
+        sb.append(")");
+
         return sb.toString();
+
     }
 
     /**
@@ -191,4 +197,5 @@ public class List {
         // Returns an iterator that starts in that element
         return new ListIterator(current);
     }
+
 }
